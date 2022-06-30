@@ -1,3 +1,24 @@
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    tiles.setCurrentTilemap(tilemap`level1`)
+    controller.moveSprite(sprites.create(img`
+        . . . . f f 4 f f . . . . . . . 
+        . . . 4 4 d 4 d 4 4 . . . . . . 
+        . . . . 4 4 e 4 4 . . . . . . . 
+        . . . . . 4 4 4 . . . . . . . . 
+        . . 9 9 9 9 4 9 9 9 9 . . . . . 
+        . . 9 9 9 9 1 9 9 9 9 . . . . . 
+        . . 9 9 9 9 9 9 9 9 9 . . . . . 
+        . . 9 9 9 9 1 9 9 9 9 . . . . . 
+        . . 9 9 9 9 9 9 9 9 9 . . . . . 
+        . . 9 9 9 9 1 9 9 9 9 . . . . . 
+        . . 4 4 9 9 9 9 9 4 4 . . . . . 
+        . . . . a a a a a . . . . . . . 
+        . . . . b b b b b . . . . . . . 
+        . . . . b b . b b . . . . . . . 
+        . . . . b b . b b . . . . . . . 
+        . . . . b b . b b . . . . . . . 
+        `, SpriteKind.Player))
+})
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 	
 })
@@ -5,32 +26,10 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     controller.moveSprite(mySprite)
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    controller.moveSprite(mySprite, 10, 1)
+    controller.moveSprite(mySprite, 10, 0)
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    controller.moveSprite(mySprite, 10, 1)
-})
-controller.up.onEvent(ControllerButtonEvent.Released, function () {
-    tiles.setCurrentTilemap(tilemap`level1`)
-    mySprite = sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . f f f f . . . . . . . 
-        . . . . . f 1 1 f . . . . . . . 
-        . . . . . d f f d . . . . . . . 
-        . . . . . d 2 2 d . . . . . . . 
-        . . . . 2 2 2 2 2 2 . . . . . . 
-        . . . . 2 2 2 2 2 2 . . . . . . 
-        . . . . 2 2 2 2 2 2 . . . . . . 
-        . . . . 2 2 2 2 2 2 . . . . . . 
-        . . . . d 8 8 8 8 d . . . . . . 
-        . . . . . 8 8 8 8 . . . . . . . 
-        . . . . . 8 8 8 8 . . . . . . . 
-        . . . . . e f f e . . . . . . . 
-        `, SpriteKind.Player)
-    controller.moveSprite(mySprite)
+    controller.moveSprite(mySprite, -10, 0)
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     controller.moveSprite(mySprite, 0, -10)
